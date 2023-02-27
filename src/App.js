@@ -4,21 +4,28 @@ import React, { useState } from 'react';
 
 
 function App() {
-  const [answerValue, setAnswerValue] = useState('');
-  const [selectedValue, setSelectedValue] = useState('');
+  const [bracketName, setName] = useState('');
+  const [bracketSize, setSize] = useState('');
+  const [bracketType, setType] = useState('');
 
-    const handleAnswerChange = (event) => {
-      setAnswerValue(event.target.value);
-      console.log('The value entered was: ' + event.target.value);
+
+    const handleName = (event) => {
+      setName(event.target.value);
     };
 
-    const handleDropdownChange = (event) => {
-      setSelectedValue(event.target.value);
-      console.log('The value entered was: ' + event.target.value);
+    const handleType = (event) => {
+      setType(event.target.value);
+    };
+
+    const handleSize = (event) => {
+      setSize(event.target.value);
     };
 
     const handleClick = () => {
       <link to="/src/bracket.js"></link>
+      console.log('The Name entered was: ' + bracketName);
+      console.log('The Type entered was: ' + bracketType);
+      console.log('The Size entered was: ' + bracketSize);
       console.log('Submit button clicked!');
       // Do something with form data here, e.g. submit to server
     };
@@ -32,26 +39,28 @@ function App() {
           <div>
             <label>
               Bracket Name:
-              <input type="text" value={answerValue} onChange={handleAnswerChange} />
+              <input type="text" value={bracketName} onChange={handleName} />
             </label>
           </div>
           <div>
             <label>
               Bracket Type:
-              <select value={selectedValue} onChange={handleDropdownChange}>
-              <option value="option4">Single Elimination</option>
+              <select value={bracketType} onChange={handleType}>
+              <option defaultValue="Football">Football</option>
+              <option value="Soccer">Soccer</option>
+              <option value="Basenall">Baseball</option>
             </select>
             </label>
           </div>
           <label>
             Bracket Size:
-            <select value={selectedValue} onChange={handleDropdownChange}>
-              <option value="option4">4</option>
-              <option value="option5">5</option>
-              <option value="option6">6</option>
-              <option value="option7">7</option>
-              <option value="option8">8</option>
-              <option value="option9">9</option>
+            <select value={bracketSize} onChange={handleSize}>
+              <option defaultValue="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
             </select>
           </label>
         </div>
