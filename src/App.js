@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 
 function App() {
   const [bracketName, setName] = useState('');
-  const [bracketSize, setSize] = useState('');
-  const [bracketType, setType] = useState('');
+  const [bracketSize, setSize] = useState(4);
+  const [bracketType, setType] = useState('Football');
 
 
     const handleName = (event) => {
@@ -48,7 +48,7 @@ function App() {
               <select value={bracketType} onChange={handleType}>
               <option defaultValue="Football">Football</option>
               <option value="Soccer">Soccer</option>
-              <option value="Basenall">Baseball</option>
+              <option value="Baseball">Baseball</option>
             </select>
             </label>
           </div>
