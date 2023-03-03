@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #2c3039;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,81 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.Page-title  {
+  text-align: center;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  font-size: 80px;
+  transform: skewY(-2deg);
+  letter-spacing: 4px;
+  word-spacing: -8px;
+  color: rgb(255, 255, 255);
+  text-shadow: 
+    -1px -1px 0 black,
+    -2px -2px 0 black,
+    -3px -3px 0 black,
+    -4px -4px 0 black,
+    -5px -5px 0 black,
+    -6px -6px 0 black,
+    -7px -7px 0 black,
+    -8px -8px 0 black,
+    -30px 20px 40px dimgrey
+}
+
+.Page-header {
+  font-family: 'Oswald', Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  word-spacing: -4px;
+  color: rgb(255, 255, 255);
+}
+
+.space {
+  margin: 20px;
+}
+
+/* Style the select element */
+select {
+  margin-left: 10px;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 2px solid #494949;
+}
+
+/* Style the option elements */
+option {
+  font-size: 16px;
+  background-color: #d2d2d2;
+  color: #000000;
+}
+
+/* Style the selected option */
+option:checked {
+  background-color: #002b97;
+  color: #fff;
+}
+
+input {
+  margin-left: 10px;
+  font-family: 'Oswald', Helvetica, sans-serif;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 2px solid #494949;
+}
+
+button {
+  font-family: 'Oswald', Helvetica, sans-serif;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid #494949;
 }
 
 @keyframes App-logo-spin {

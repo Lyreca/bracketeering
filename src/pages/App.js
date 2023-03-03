@@ -45,18 +45,17 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Bracketeering</h1>
-        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className='Page-title'>Bracketeering</h1>
         <div>
-          <div>
-            <label>
-              Bracket Name:
+          <div className='space'>
+            <label className='Page-header'>
+              Bracket Name: 
               <input type="text" value={bracketName} onChange={handleName} />
             </label>
           </div>
-          <div>
-            <label>
-              Bracket Type:
+          <div className='space'>
+            <label className='Page-header'>
+              Bracket Type: 
               <select value={bracketType} onChange={handleType}>
               <option defaultValue="Football">Football</option>
               <option value="Soccer">Soccer</option>
@@ -64,8 +63,9 @@ const App = () => {
             </select>
             </label>
           </div>
-          <label>
-            Bracket Size:
+          <div className='space'>
+          <label className='Page-header'>
+            Bracket Size: 
             <select value={bracketSize} onChange={handleSize}>
               <option defaultValue="4">4</option>
               <option value="5">5</option>
@@ -75,6 +75,7 @@ const App = () => {
               <option value="9">9</option>
             </select>
           </label>
+          </div>
         </div>
         <button onClick={handleClick}>Submit</button>
       </header>
