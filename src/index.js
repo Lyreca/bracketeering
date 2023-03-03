@@ -6,13 +6,14 @@ import Bracket from './pages/Bracket';
 import NoPage from './pages/NoPage';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from './pages/Layout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App/>}>
+        <Route path="/" element={<Layout/>}>
           <Route index element={<App/>}/>
           <Route path="bracket" element={<Bracket/>}/>
           <Route path="*" element={<NoPage/>}/>
