@@ -2,6 +2,7 @@ import logo from '../assets/logo.svg';
 import '../styles/App.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Football } from '../assets/Teams'; 
 
 
 const App = () => {
