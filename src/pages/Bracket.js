@@ -12,7 +12,8 @@ const Bracket = () => {
       <header className="App-header">
         <h1>Created Bracket</h1>
         <p>Bracket Name: {name}</p>
-        <img src={logo} className="App-logo" alt="logo" />
+        <p>Bracket Type: {type}</p>
+        <p>Bracket Size: {size}</p>
       </header>
     </div>
   );
