@@ -1,13 +1,14 @@
 import logo from '../assets/logo.svg';
 import '../styles/App.css';
 import React, { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const App = () => {
   const [bracketName, setName] = useState('');
   const [bracketSize, setSize] = useState(4);
   const [bracketType, setType] = useState('Football');
+  const navigate = useNavigate();
 
 
     const handleName = (event) => {
@@ -29,7 +30,7 @@ const App = () => {
       console.log('Submit button clicked!');
       // Do something with form data here, e.g. submit to server
 
-      return <Navigate to="/bracket"/>;
+      navigate('/bracket');
     };
 
   return (
