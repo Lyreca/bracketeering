@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+turnIntoArray.py
+.gitignore
+grabtable.py
