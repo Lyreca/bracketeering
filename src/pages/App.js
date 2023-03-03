@@ -30,7 +30,15 @@ const App = () => {
       console.log('Submit button clicked!');
       // Do something with form data here, e.g. submit to server
 
-      navigate('/bracket');
+      navigate('/bracket',
+      {state: 
+        {
+          name: bracketName,
+          size: bracketSize,
+          type: bracketType
+        }
+      }
+      );
     };
 
   return (
