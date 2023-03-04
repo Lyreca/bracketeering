@@ -38,10 +38,10 @@ const Bracket = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="Bracket-header">
         <h1 className="Page-title">{name}</h1>
         {bracket.map((item, index) => (
-          <div key={index}>
+          <div key={index} className="teams">
             {item}
           </div>
         ))}
