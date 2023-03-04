@@ -1,8 +1,7 @@
-import logo from '../assets/logo.svg';
 import '../styles/App.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Football } from '../assets/Teams'; 
+import { Football, Baseball, Soccer } from '../assets/Teams'; 
 
 
 const App = () => {
@@ -31,15 +30,40 @@ const App = () => {
       console.log('Submit button clicked!');
       // Do something with form data here, e.g. submit to server
 
-      navigate('/bracket',
+      if (bracketType === "Football"){
+        navigate('/bracket',
       {state: 
         {
           name: bracketName,
           size: bracketSize,
-          type: bracketType
+          type: Football
         }
       }
       );
+      }
+      else if (bracketType === "Baseball"){
+        navigate('/bracket',
+      {state: 
+        {
+          name: bracketName,
+          size: bracketSize,
+          type: Baseball
+        }
+      }
+      );
+      }
+      else if (bracketType === "Soccer"){
+        navigate('/bracket',
+      {state: 
+        {
+          name: bracketName,
+          size: bracketSize,
+          type: Soccer
+        }
+      }
+      );
+      }
+      
     };
 
   return (
