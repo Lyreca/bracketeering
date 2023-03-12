@@ -47,4 +47,13 @@
     flex-direction: column;
     font-size: calc(10px + 2vmin);
   }
-  
+
+  .Bracket-matchup {
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .Bracket-matchup-team {
+    margin-bottom: 5px;
+  }
+

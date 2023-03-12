@@ -9,9 +9,6 @@ const Layout = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/bracket">Brackets</Link>
-          </li>
         </ul>
       </nav>
 

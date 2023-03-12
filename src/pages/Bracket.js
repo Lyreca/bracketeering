@@ -22,30 +22,73 @@ const shuffle = (array) => {
   return array;
 };
 
+
+
 const Bracket = () => {
   const {state} = useLocation();
   const {name, size, type} = state;
-  const [bracket, setBracket] = useState([]);
+  const [matches, setMatches] = useState([]);
+  const [rounds, setRounds] = useState([]);
 
   useEffect(() => {
-    let newBracket = [];
+    let matchups = [];
     const shuffledType = shuffle(type);
-    for (let i = 0; i < size; i++) {
-      newBracket.push(shuffledType[i]);
-    }
-    setBracket(newBracket);
-  }, [size]);
+    
+    // Initialize matches
+    if (matches.length === 0) {
+      for (let i = size-1; i >= 0; i -= 2) {
+        if( i > 0 )
+        {
+          matchups.push([shuffledType[i], shuffledType[i-1]]);
+        }
+        else
+        {
+          matchups.push([shuffledType[i]]);
+        }
+      }
+
+      const matches = [];
+      matches.push(matchups);
+      setMatches(matches);
+  }
+
+
+
+    
+  }, [matches]);
+
+  const handleButtonClick = (round, match, pos) => {
+    console.log("Button clicked on Round " + round + " Match " + match + " Position " + pos);
+    const teamName = matches[round][match][pos]
+  }
 
   return (
     <div className="App">
       <header className="Bracket-header">
         <h1 className="Page-title">{name}</h1>
-        {bracket.map((item, index) => (
-          <div key={index} className="teams">
-            {item}
-          </div>
-        ))}
       </header>
+      <div className="Bracket-container">
+        {matches.map((match, index) => (
+          <div className="Bracket-round" key={index}>
+            <h2 className="Bracket-round-title">Round {index+1}</h2>
+            {match.map((matchup, num) => {
+              return (
+                <div className="Bracket-matchup" key={"round" + index+1 + "match" + num+1}>
+                  <button className="Bracket-matchup-team" onClick={() => handleButtonClick(index, num, 0)}>
+                    {matchup[0]}
+                  </button>
+                  <br></br>
+                  <button className="Bracket-matchup-team" onClick={() => handleButtonClick(index, num, 1)}>
+                    {matchup[1]}
+                  </button>
+                </div>
+              );
+            })}
+            <br></br>
+          </div>
+          ))
+        }
+      </div>
     </div>
   );
 };
