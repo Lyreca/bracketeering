@@ -92,11 +92,8 @@ const App = () => {
             Bracket Size: 
             <select value={bracketSize} onChange={handleSize}>
               <option defaultValue="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
               <option value="8">8</option>
-              <option value="9">9</option>
+              <option value="16">16</option>
             </select>
           </label>
           </div>

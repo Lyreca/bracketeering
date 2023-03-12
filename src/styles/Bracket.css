@@ -50,10 +50,13 @@
 
   .Bracket-matchup {
     margin-bottom: 20px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .Bracket-matchup-team {
     margin-bottom: 5px;
+    display: block;
   }
 
