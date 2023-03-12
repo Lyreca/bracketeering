@@ -73,6 +73,15 @@ const Bracket = () => {
     setCurrMatchup([...currMatchup, teamName]);
   }
 
+  const handleSubmitClick = () => {
+    prompt({
+      title: 'Share This Bracket',
+      message: 'Enter the email you wish to send this bracke to',
+      placeholder: 'Email',
+      inputType: 'email'
+  });
+  }
+
   return (
     <div className="App">
       <header className="Bracket-header">
@@ -121,6 +130,12 @@ const Bracket = () => {
           ))
         }
       </div>
+      <button 
+        key={"Submit"}
+        name={"Submit"}
+        className="submit-Button"
+        onClick={() => handleSubmitClick()}
+      ></button>
     </div>
   );
 };
