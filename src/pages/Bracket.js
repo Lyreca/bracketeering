@@ -90,8 +90,10 @@ const Bracket = () => {
                 <div className="Bracket-matchup" key={"round" + index+1 + "match" + num+1}>
                   
                   {matchup.map((team, pos) => {
+                    let isDisabled = (index+1 === matches.length) ? false : true;
+
                     return (
-                      <button key={"round" + index+1 + "match" + num+1 + "pos" + pos+1} className="Bracket-matchup-team" onClick={() => handleButtonClick(index, num, pos)}>
+                      <button key={"round" + index+1 + "match" + num+1 + "pos" + pos+1} disabled={isDisabled} className="Bracket-matchup-team" onClick={() => handleButtonClick(index, num, pos)}>
                         {team}
                       </button>
                     );
