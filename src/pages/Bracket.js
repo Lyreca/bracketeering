@@ -47,7 +47,6 @@ const Bracket = () => {
     else
     if (currMatchup.length === matches[matches.length-1].length) {
       // Add new round
-      alert("Add new round")
       let matchups = [];
       if(currMatchup.length === 1) {
         alert("Winner is " + currMatchup[0]);
@@ -67,13 +66,11 @@ const Bracket = () => {
   }, [matches, currMatchup]);
 
   const handleButtonClick = (round, match, pos) => {
-    console.log("Button clicked on Round " + round + " Match " + match + " Position " + pos);
     const teamName = matches[round][match][pos];
-    console.log("Team name: " + teamName);
-    
+    let str = "round" + round + "match" + match + "pos" + pos; 
+    document.querySelector(`button[name='${str}']`).style.backgroundColor = "green";
+    document.querySelector(`button[name='${str}']`).style.color = "white";
     setCurrMatchup([...currMatchup, teamName]);
-    console.log("Current matchup: " + currMatchup);
-    
   }
 
   return (
@@ -90,10 +87,28 @@ const Bracket = () => {
                 <div className="Bracket-matchup" key={"round" + index+1 + "match" + num+1}>
                   
                   {matchup.map((team, pos) => {
-                    let isDisabled = (index+1 === matches.length) ? false : true;
+                    let isDisabled = true
+
+                    if  (index+1 === matches.length) {
+                        if (currMatchup.length === num) {
+                          isDisabled = false;
+                        }
+                    }
+                    console.log(index)
+                    console.log(size)
+
+                    if (index+1 === Math.log2(size)+1) {
+                      isDisabled = true;
+                    }
 
                     return (
-                      <button key={"round" + index+1 + "match" + num+1 + "pos" + pos+1} disabled={isDisabled} className="Bracket-matchup-team" onClick={() => handleButtonClick(index, num, pos)}>
+                      <button 
+                        key={"round" + index+1 + "match" + num+1 + "pos" + pos+1}
+                        name={"round" + index + "match" + num + "pos" + pos} 
+                        disabled={isDisabled} 
+                        className="Bracket-matchup-team"
+                        onClick={() => handleButtonClick(index, num, pos)}
+                      >
                         {team}
                       </button>
                     );

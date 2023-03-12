@@ -60,3 +60,7 @@
     display: block;
   }
 
+  button:disabled {
+    color: gray;
+  }
+
