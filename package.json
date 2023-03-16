@@ -14,6 +14,7 @@
     "react-uuid": "^2.0.0",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "http://drwestfall.us/spring2023/cscn408/asgn02_app04/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

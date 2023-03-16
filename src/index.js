@@ -13,9 +13,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout/>}>
+        <Route path="/spring2023/cscn408/asgn02_app04/" element={<Layout/>}>
           <Route index element={<App/>}/>
-          <Route path="bracket" element={<Bracket/>}/>
+          <Route path="/spring2023/cscn408/asgn02_app04/bracket" element={<Bracket/>}/>
           <Route path="*" element={<NoPage/>}/>
         </Route>
       </Routes>

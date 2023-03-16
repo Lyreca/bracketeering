@@ -31,7 +31,7 @@ const App = () => {
       // Do something with form data here, e.g. submit to server
 
       if (bracketType === "Football"){
-        navigate('/bracket',
+        navigate('/spring2023/cscn408/asgn02_app04/bracket',
       {state: 
         {
           name: bracketName,
@@ -42,7 +42,7 @@ const App = () => {
       );
       }
       else if (bracketType === "Baseball"){
-        navigate('/bracket',
+        navigate('/spring2023/cscn408/asgn02_app04/bracket',
       {state: 
         {
           name: bracketName,
@@ -53,7 +53,7 @@ const App = () => {
       );
       }
       else if (bracketType === "Soccer"){
-        navigate('/bracket',
+        navigate('/spring2023/cscn408/asgn02_app04/bracket',
       {state: 
         {
           name: bracketName,
