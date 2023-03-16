@@ -63,7 +63,7 @@ const Bracket = () => {
       setMatches(newMatches);
       setCurrMatchup([]);
     }
-  }, [matches, currMatchup]);
+  }, [matches, currMatchup, size, type]);
 
   const handleButtonClick = (round, match, pos) => {
     const teamName = matches[round][match][pos];
